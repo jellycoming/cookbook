@@ -295,6 +295,11 @@ function check_crontab(){
    fi
 }
 ```
+# 查看显卡占用情况
+```
+# 每0.2秒刷新
+$ watch -n 0.2 "nvidia-smi"
+```
 
 
 
