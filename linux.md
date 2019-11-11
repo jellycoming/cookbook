@@ -1,15 +1,15 @@
 # basic
 
+### set
+* `set -e`/`set -o errexit` "Exit immediately if a simple command exits with a non-zero status.",也就是说，在"set -e"之后出现的代码，一旦出现了返回值非零，整个脚本就会立即退出。
+* `set -u`/`set -o nounset` 当执行时使用到未定义过的变量，则报错并停止执行。
+* `set -x`/`set -o xtrace` 执行指令后，会先显示该指令及参数，常用于复杂脚本的调试
+* `set -o pipefail` 管道中只要一个子命令失败，整个管道命令就失败，脚本就会终止执行。
 ```bash
 current_dir=$(cd $(dirname $0);pwd)  # 获取当前目录并赋值给变量current_dir
 cd $current_dir  # 进入当前目录(使用变量)
-
-set -e -u
-# -e: set命令的-e参数，linux自带的说明如下：
-# "Exit immediately if a simple command exits with a non-zero status."
-# 也就是说，在"set -e"之后出现的代码，一旦出现了返回值非零，整个脚本就会立即退出。
-# -u: 当执行时使用到未定义过的变量，则显示错误信息。
-
+```
+```bash
 # ssh后以$username用户执行svn命令
 ssh $host "runuser -c 'svn up $path' $username"
 ```

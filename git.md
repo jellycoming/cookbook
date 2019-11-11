@@ -95,5 +95,10 @@ git push --force origin master
 git diff master..origin/master
 ```
 
+* ##### 查看tag何时被创建
+```shell script
+git log --tags --simplify-by-decoration --pretty="format:%ai %d"
+```
+
 
 
