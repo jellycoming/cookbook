@@ -4,6 +4,7 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"sync"
 	"unsafe"
 )
 
@@ -118,6 +119,25 @@ func empty() {
 	fmt.Printf("a=%v b=%v\n", a, b)
 }
 
+// 并发安全性
+// slice底层实现中并未涉及并发相关控制，不是并发安全的数据结构
+func concurrency() {
+	s := []int{1}
+	wg := &sync.WaitGroup{}
+	for i := 0; i < 4; i++ {
+		wg.Add(1)
+		go func() {
+			defer wg.Done()
+			for n := 0; n < 10000; n++ {
+				s[0]++
+			}
+		}()
+	}
+	wg.Wait()
+	// 结果不确定
+	fmt.Printf("%v", s)
+}
+
 type A struct {
 	Name  string
 	Score int
@@ -182,4 +202,7 @@ func main() {
 	// 切片间不能通过==比较，但切片可以和nil比较
 	// fmt.Println(a == b) // invalid
 	fmt.Println(a == nil) // false
+
+	// 并发安全性
+	concurrency()
 }
