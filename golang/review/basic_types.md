@@ -1,3 +1,4 @@
+```go
 package main
 
 import (
@@ -32,3 +33,5 @@ func UintMinus() uint32 {
 func main() {
 	fmt.Println(UintMinus())
 }
+
+```
