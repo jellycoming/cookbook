@@ -310,7 +310,7 @@ print 'fibonacci n: {}\nres: {}\ncall times: {}'.format(n, res, calls)
 > weights = \[5, 3, 2\], values = \[9, 7, 8\]  
 > 求背包能选择物品的最大价值  
 > 采用深度优先及左侧优先的决策树算法,每个节点的元素表示: 当前物品索引i（右侧开始），剩余背包负重w，当前背包内物品价值v  
-> ![](../assets/knapsack.png)
+> ![](assets/knapsack.png)
 
 ```py
 def max_val(w, v, i, aw):

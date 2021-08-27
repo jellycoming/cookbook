@@ -1,4 +1,4 @@
 .DS_Store
 .idea/
-golang/main.go
-python/main.py
+go/src/main.go
+python/src/main.py
