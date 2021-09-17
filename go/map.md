@@ -1,8 +1,8 @@
 ### map
 
-![](assets/hmap.png)
-
 Go使用哈希查找表实现map，使用链表法解决哈希冲突问题。
+
+![](assets/hmap.png)
 
 ### 数据结构
 ```go
