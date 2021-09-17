@@ -103,7 +103,7 @@ func slicecopy(toPtr unsafe.Pointer, toLen int, fromPtr unsafe.Pointer, fromLen 
 
 // nil切片和空切片
 func empty() {
-	// nil切片底层数组的指针地址为0，空切片引用的数组的指针地址是存在的，但没有分配任何内存空间呢。
+	// nil切片底层数组的指针地址为0，空切片引用的数组的指针地址是存在的，但没有分配任何内存空间。
 	// 不同空切片引用的数组的指针地址为同一个固定值
 	var a []int            // nil切片
 	var b = make([]int, 0) // 空切片
