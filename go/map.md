@@ -219,7 +219,7 @@ bucketloop:
          elem = add(unsafe.Pointer(b), dataOffset+bucketCnt*uintptr(t.keysize)+i*uintptr(t.elemsize))
          goto done
       }
-     // bucket的8个槽位遍历完之后还没有找到合适的位置，则去overflow桶里继续找(b=ovf)
+      // bucket的8个槽位遍历完之后还没有找到合适的位置，则去overflow桶里继续找(b=ovf)
       ovf := b.overflow(t)
       // 如果overflow桶是nil，说明所有桶及其overflow桶都遍历完毕，需要分配新的空间存储该key
       if ovf == nil {
@@ -392,11 +392,11 @@ if h.growing() {
 func growWork(t *maptype, h *hmap, bucket uintptr) {
 	// make sure we evacuate the oldbucket corresponding
 	// to the bucket we're about to use
-  // 对当前执行插入或删除操作的桶进行搬迁，evacuate函数每次完成一个桶的搬迁操作
+    // 对当前执行插入或删除操作的桶进行搬迁，evacuate函数每次完成一个桶的搬迁操作
 	evacuate(t, h, bucket&h.oldbucketmask())
 
 	// evacuate one more oldbucket to make progress on growing
-  // 再计算出一个需要搬迁的老的桶
+    // 再计算出一个需要搬迁的老的桶
 	if h.growing() {
 		evacuate(t, h, h.nevacuate)
 	}
@@ -412,14 +412,14 @@ func main() {
 	m := make(map[string]int)
 	m["hello"] = 1
   
-  // 不带`,`的取值方式，如果key在map中不存在，则取到的是对应类型的零值，此处为int的零值0
+    // 不带`,`的取值方式，如果key在map中不存在，则取到的是对应类型的零值，此处为int的零值0
 	v1 := m["hello"]
-  fmt.Println(v1) // 1
-  v2 := m["hi"]
-  fmt.Println(v2) // 0
+    fmt.Println(v1) // 1
+    v2 := m["hi"]
+    fmt.Println(v2) // 0
   
-  // 带`,`的取值方式，除获取key对应的值外，还返回key是否存在于map中的布尔值
-  // 当map中可能存有0值时，如 m["hi"]=0，这种方式可以区别存储的本身是零值还是对应key不存在
+    // 带`,`的取值方式，除获取key对应的值外，还返回key是否存在于map中的布尔值
+    // 当map中可能存有0值时，如 m["hi"]=0，这种方式可以区别存储的本身是零值还是对应key不存在
 	v3, ok := m["hi"]
 	fmt.Println(v3, ok) // 0 false
 }
@@ -467,7 +467,7 @@ map是非并发安全的，在执行赋值、取值、删除、迭代等操作�
 ```go
 // 例如在迭代map时有其他goroutine正在写
 if h.flags&hashWriting != 0 {
-		throw("concurrent map iteration and map write")
+    throw("concurrent map iteration and map write")
 }
 ```
 
