@@ -7,7 +7,7 @@ Go语言中的通道是一个有锁队列，用于连接不同的goroutine。是
 ```go
 // runtime/chan.go
 type hchan struct {
-		// 队列中的元素总个数, len(hchan)
+    // 队列中的元素总个数, len(hchan)
     qcount   uint           // total data in the queue
     // 环形队列的大小, cap(hchan)
     dataqsiz uint           // size of the circular queue
@@ -43,9 +43,9 @@ type hchan struct {
 ### 发送数据
 
 向channel发送数据会有3种情况：
-	1.	将数据直接发送给接受者
-	2.	将数据发送到缓冲区
-	3.	发送者陷入阻塞
+	1.	将数据直接发送给接受者 
+	2.	将数据发送到缓冲区 
+	3.	发送者陷入阻塞 
 ```go
 func chansend(c *hchan, ep unsafe.Pointer, block bool, callerpc uintptr) bool {
 	// 向nil channel发送数据会block当前goroutine
