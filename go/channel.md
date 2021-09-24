@@ -43,9 +43,9 @@ type hchan struct {
 ### 发送数据
 
 向channel发送数据会有3种情况：
-	1.	将数据直接发送给接受者 
-	2.	将数据发送到缓冲区 
-	3.	发送者陷入阻塞 
+1. 将数据直接发送给接受者 
+2. 将数据发送到缓冲区 
+3. 发送者陷入阻塞 
 ```go
 func chansend(c *hchan, ep unsafe.Pointer, block bool, callerpc uintptr) bool {
 	// 向nil channel发送数据会block当前goroutine
@@ -165,8 +165,8 @@ func chansend(c *hchan, ep unsafe.Pointer, block bool, callerpc uintptr) bool {
 
 从channel接收数据同样有3中情况：
 1.	有阻塞的sender goroutine：
-		a. 无缓冲区，直接从sender接收数据
-		b. 有缓冲区，从缓冲区接收数据，并把sender的数据copy到缓冲区
+  - 无缓冲区，直接从sender接收数据
+  - 有缓冲区，从缓冲区接收数据，并把sender的数据copy到缓冲区
 2. 无阻塞的sender并且缓冲区内有数据：从缓冲区接收数据，并把sender的数据copy到缓冲区
 3. 阻塞reciever goroutine
 
