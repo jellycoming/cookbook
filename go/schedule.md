@@ -70,3 +70,30 @@ Debug方式运行，输出调度信息，其中1000表示没1000ms输出一次de
 * `runqueue`: 全局队列中的G数量
 * `[0 0]`: P对应的本地队列中的G数量，当本地队列已满时，新生成的G会被压进全局队列中，`runqueue`的数量就会增加
 
+### 抢占式调度
+
+```go
+package main
+
+import (
+	"fmt"
+	"runtime"
+	"time"
+)
+
+func main() {
+	var x int
+	threads := runtime.GOMAXPROCS(0)
+	for i := 0; i < threads; i++ {
+		go func() {
+			for {
+				x++
+			}
+		}()
+	}
+	time.Sleep(time.Second)
+	fmt.Println("hello world")
+}
+```
+* `go1.13及之前版本`，执行上面的代码程序会卡死，原因是go1.14以前的版本，抢占式调度是基于协作的，协程需要主动让出执行权，main goroutine在执行time.Sleep让出执行权后，所有绑定的P-M对都会去执行go关键字生成的goroutine，这些goroutine内部都是死循环并且没有任何函数调用，所以永远不会让出执行权，导致程序对外表现就是卡死
+* `go1.14及之后版本`，执行上面程序会输出`hello world`，原因是go1.14以后，抢占式调度是基于信号实现的，跟随程序一起启动的sysmon线程会监控到执行时间过长的goroutine，并向正在执行该goroutine的M(操作系统线程)发出抢占信号，使当前goroutine让出执行权
