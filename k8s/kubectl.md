@@ -10,4 +10,15 @@ kubectl exec -it {podName} -c {containerName} -- /bin/bash
 
 # 删除Pod
 kubectl delete pod {podName}
+
+#### 节点维护
+# 设置节点不可调度
+kubectl cordon {nodeName}
+# 驱逐节点上的Pod
+kubectl drain {nodeName} --delete-local-data --ignore-daemonsets --force
+# 设置节点可调度
+kubectl uncordon {nodeName}
+
+# 按副本数降序查看Hpa
+kubectl get hpa|awk 'NR>1{print $0}'|sort -nr -k 6
 ```
