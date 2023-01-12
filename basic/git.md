@@ -100,5 +100,7 @@ git diff master..origin/master
 git log --tags --simplify-by-decoration --pretty="format:%ai %d"
 ```
 
-
-
+* #### 新版本授权
+```shell script
+git remote set-url origin https://{token}@github.com/{username}/cookbook.git
+```

@@ -19,6 +19,13 @@ kubectl drain {nodeName} --delete-local-data --ignore-daemonsets --force
 # 设置节点可调度
 kubectl uncordon {nodeName}
 
+# 删除节点
+kubectl delete node {nodeName}
+
+# 加入节点
+# kubeadm token create --print-join-command
+# ?
+
 # 按副本数降序查看Hpa
 kubectl get hpa|awk 'NR>1{print $0}'|sort -nr -k 6
 ```
