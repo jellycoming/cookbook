@@ -38,7 +38,7 @@ type hchan struct {
 }
 ```
 
-![](assets/hchan.png)
+![](../assets/hchan.png)
 
 ### 发送数据
 

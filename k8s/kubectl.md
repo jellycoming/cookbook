@@ -28,4 +28,9 @@ kubectl delete node {nodeName}
 
 # 按副本数降序查看Hpa
 kubectl get hpa|awk 'NR>1{print $0}'|sort -nr -k 6
+
+# PersistentVolume
+# 删除所有持久卷(不建议)
+ kubectl delete pvc --all
+ kubectl delete pv --all
 ```
