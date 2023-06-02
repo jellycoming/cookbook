@@ -12,7 +12,7 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 
-	models "cookbook/go/examples/flatbuffers/grpc/models"
+	models "cookbook-go/examples/flatbuffers/grpc/models"
 )
 
 var (

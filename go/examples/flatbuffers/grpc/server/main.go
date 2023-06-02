@@ -6,7 +6,7 @@ import (
 	"log"
 	"net"
 
-	models "cookbook/go/examples/flatbuffers/grpc/models"
+	models "cookbook-go/examples/flatbuffers/grpc/models"
 	flatbuffers "github.com/google/flatbuffers/go"
 	"google.golang.org/grpc"
 )
