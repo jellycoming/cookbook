@@ -2,7 +2,7 @@
 
 Go使用哈希查找表实现map，使用链表法解决哈希冲突问题。
 
-![](../assets/hmap.png)
+![](./assets/hmap.png)
 
 ### 数据结构
 ```go
@@ -458,7 +458,7 @@ if c := h.oldbuckets; c != nil {
 
 ### key的定位过程
 
-![](../assets/hash.png)
+![](./assets/hash.png)
 
 ### 并发安全性
 
