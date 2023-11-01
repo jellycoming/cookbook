@@ -52,6 +52,9 @@ $ git push origin --delete master-bugfix
 # 从远程服务器检出指定分支到本地
 $ git checkout -b master-bugfix origin/master-bugfix
 $ git checkout --track origin/master-bugfix
+
+# 基于commit hash检出分支
+$ git checkout -b branch_name <commit-hash>
 ```
 
 * ##### 标签
@@ -93,6 +96,17 @@ git reset --hard e3f1e37
 git push --force origin master
 # Then to prove it (it won't print any diff)
 git diff master..origin/master
+```
+
+* #### 用dev分支覆盖master分支
+
+```
+git checkout master
+git pull
+git checkout dev
+git merge -s ours master
+git checkout master
+git merge dev
 ```
 
 * ##### 查看tag何时被创建

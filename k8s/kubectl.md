@@ -11,6 +11,9 @@ kubectl exec -it {podName} -c {containerName} -- /bin/bash
 # 删除Pod
 kubectl delete pod {podName}
 
+# 滚动重启deployment下的所有pod
+kubectl rollout restart deployment {deploymentName}
+
 #### 节点维护
 # 设置节点不可调度
 kubectl cordon {nodeName}
