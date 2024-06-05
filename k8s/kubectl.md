@@ -13,6 +13,11 @@ kubectl delete pod {podName}
 
 # 滚动重启deployment下的所有pod
 kubectl rollout restart deployment {deploymentName}
+# 查看deployment状态
+kubectl rollout status deployment {deploymentName}
+# 更新deployment镜像
+kubectl set image deployment/{deploymentName} {containerName}={image}:{tag}
+
 
 #### 节点维护
 # 设置节点不可调度
