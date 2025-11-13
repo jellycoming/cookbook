@@ -50,4 +50,12 @@ kubectl get hpa|awk 'NR>1{print $0}'|sort -nr -k 6
 # 删除所有持久卷(不建议)
  kubectl delete pvc --all
  kubectl delete pv --all
+  
+#
+# Istio
+#
+# 查看istio_proxy状态
+kubectl exec -it {podName} -c istio-proxy -- curl localhost:15000/stats
+  
+
 ```

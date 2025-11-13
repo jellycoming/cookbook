@@ -1,0 +1,4 @@
+build --verbose_failures=true
+
+build --cxxopt=-std=c++17
+build --host_cxxopt=-std=c++17
