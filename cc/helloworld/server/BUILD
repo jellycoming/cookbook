@@ -6,7 +6,7 @@ cc_binary(
         "@com_github_grpc_grpc//:grpc++",
         "@com_github_grpc_grpc//:grpc++_reflection",
         "//protos:helloworld_cc_grpc",
-        "//third_party/lib_time:lib_time",
+        "//third_party/mytime:mytime",
     ],
 )
 

@@ -1,6 +1,7 @@
 #include <grpcpp/grpcpp.h>
-#include "protos/helloworld.grpc.pb.h"
 #include <iostream>
+#include "protos/helloworld.grpc.pb.h"
+#include "mytime/time_util.h"
 
 using grpc::Server;
 using grpc::ServerBuilder;
@@ -10,15 +11,12 @@ using helloworld::Greeter;
 using helloworld::HelloReply;
 using helloworld::HelloRequest;
 
-extern "C" void current_time();
-
 class GreeterServiceImpl final : public Greeter::Service {
     Status SayHello(ServerContext* context, const HelloRequest* request,
                     HelloReply* reply) override {
         std::string prefix = "Hello ";
         reply->set_message(prefix + request->name());
-        std::cout << "Received request from: " << request->name() << std::endl;
-        current_time();
+        std::cout << current_time() << " Received request from: " << context->peer() << " with name: " << request->name() << std::endl;
         return Status::OK;
     }
 };
