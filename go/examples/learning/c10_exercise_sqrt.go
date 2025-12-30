@@ -14,7 +14,7 @@ func Sqrt(x float64) float64 {
 	return z
 }
 
-func main() {
+func _() {
 	var x float64 = 98
 	fmt.Printf("My Sqrt(%v) is %g\n", x, Sqrt(x))
 	fmt.Printf("math.Sqrt(%v) is %g\n", x, math.Sqrt(x))

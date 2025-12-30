@@ -31,7 +31,8 @@ func do(i interface{}) {
 	}
 }
 
-/**
+/*
+*
 fmt 包中定义的 Stringer 是最普遍的接口之一。
 
 	type Stringer interface {
@@ -42,20 +43,20 @@ Stringer 是一个可以用字符串描述自己的类型。fmt 包（还有很�
 */
 type Person struct {
 	Name string
-	Age int
+	Age  int
 }
 
 func (p *Person) String() string {
 	return fmt.Sprintf("%v (%v years)", p.Name, p.Age)
 }
 
-func main() {
+func _() {
 	typeof()
 	do(21)
 	do("hello")
 	do(true)
 
-	p1:= Person{"xx", 25}
+	p1 := Person{"xx", 25}
 	p2 := Person{"oo", 30}
 	fmt.Println(p1, p2)
 }

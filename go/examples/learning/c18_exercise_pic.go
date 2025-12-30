@@ -51,6 +51,6 @@ func ShowImage(m image.Image) {
 	fmt.Println("IMAGE:" + enc)
 }
 
-func main() {
+func _() {
 	Show(Pic)
 }

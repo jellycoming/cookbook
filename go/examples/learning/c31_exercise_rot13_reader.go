@@ -108,7 +108,7 @@ func (rot *rot13Reader) Read(b []byte) (int, error) {
 	return n, nil
 }
 
-func main() {
+func _() {
 	s1 := strings.NewReader("Lbh penpxrq gur pbqr!")
 	r1 := rot13Reader{s1}
 	io.Copy(os.Stdout, &r1)

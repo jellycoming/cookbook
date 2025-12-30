@@ -30,7 +30,7 @@ func baseHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func main() {
+func _() {
 	http.HandleFunc("/", baseHandler)
 	err := http.ListenAndServe(":8000", nil)
 	if err != nil {

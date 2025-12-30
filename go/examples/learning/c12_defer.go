@@ -17,7 +17,7 @@ func defer2() {
 	}
 	fmt.Println("done")
 }
-func main() {
+func _() {
 	defer1()
 	defer2()
 }

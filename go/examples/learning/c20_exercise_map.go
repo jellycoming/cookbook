@@ -62,6 +62,6 @@ func WordCount(s string) map[string]int {
 	return rv
 }
 
-func main() {
+func _() {
 	Test(WordCount)
 }

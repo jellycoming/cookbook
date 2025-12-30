@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func _() {
 	// 返回当前时间: 2019-01-17 19:19:51.376874 +0800 CST m=+0.000349499
 	t := time.Now()
 	fmt.Println(t)
@@ -21,7 +21,7 @@ func main() {
 	// 当前小时
 	fmt.Println(t.Hour())
 	// 将时间转为不同格式的字符串
-	fmt.Println(t.Format("2006-01-02")) // 转为"yyyy-mm-dd"格式的字符串: 2019-01-17
+	fmt.Println(t.Format("2006-01-02"))          // 转为"yyyy-mm-dd"格式的字符串: 2019-01-17
 	fmt.Println(t.Format("2006-01-02 15:04:05")) // 转为"yyyy-mm-dd HH:MM:SS"格式的字符串: 2019-01-17 19:19:51
 	fmt.Println(t.Format(time.RFC3339))
 	fmt.Println(t.Format("3:04PM"))

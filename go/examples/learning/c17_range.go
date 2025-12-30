@@ -36,7 +36,7 @@ func range2() {
 	}
 }
 
-func main() {
+func _() {
 	range1()
 	range2()
 }

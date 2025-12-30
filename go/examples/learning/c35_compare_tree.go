@@ -77,20 +77,20 @@ func Same(t1, t2 *Tree) bool {
 	return true
 }
 
-func main() {
+func _() {
 	t1 := New(1)
 	t2 := New(1)
 	c1 := make(chan int)
 	c2 := make(chan int)
 	go Walk(t1, c1)
 	for i := range c1 {
-		fmt.Printf("%d, ",i)
+		fmt.Printf("%d, ", i)
 	}
 	fmt.Println("from t1")
 	go Walk(t2, c2)
 	for i := range c2 {
-		fmt.Printf("%d, ",i)
+		fmt.Printf("%d, ", i)
 	}
 	fmt.Println("from t2")
-	fmt.Printf("t1 == t2 is %v",Same(t1, t2))
+	fmt.Printf("t1 == t2 is %v", Same(t1, t2))
 }

@@ -17,7 +17,7 @@ func call(s string) {
 	}
 }
 
-func main() {
+func _() {
 	// go 关键字会启动一个新的 Go 程并行执行
 	go call("Hello")
 	call("World")

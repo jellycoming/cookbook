@@ -80,7 +80,7 @@ func ShowImagex(m image.Image) {
 	fmt.Println("IMAGE:" + enc)
 }
 
-func main() {
+func _() {
 	//img()
 	m := Image{500, 500}
 	ShowImagex(&m)

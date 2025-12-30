@@ -61,7 +61,7 @@ func desc(i interface{}) {
 	fmt.Printf("(%v, %T)\n", i, i)
 }
 
-func main() {
+func _() {
 	var a Abser
 	f := MyFloati(-math.Sqrt2)
 	v := Vertexi{3, 4}

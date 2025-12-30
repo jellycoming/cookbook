@@ -23,7 +23,7 @@ func SqrtE(x float64) (float64, error) {
 	}
 }
 
-func main() {
+func _() {
 	fmt.Println(SqrtE(2))
 	fmt.Println(SqrtE(-2))
 }

@@ -71,7 +71,7 @@ func NewLogSubject() *LogSubject {
 	return &LogSubject{Observers: make(map[Observer]bool)}
 }
 
-func main() {
+func RunPubSub() {
 	ch := make(chan *Message)
 	subject := NewLogSubject()
 	go subject.Subscribe(ch)

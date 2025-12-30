@@ -134,7 +134,7 @@ func slice6() {
 	printSlice(s)
 }
 
-func main() {
+func _() {
 	slice1()
 	slice2()
 	slice3()

@@ -44,7 +44,7 @@ func Crawl(url string, depth int, fetcher Fetcher) {
 	if err != nil {
 		fmt.Println(err)
 		return
-	}else{
+	} else {
 		urlMap.Put(url)
 	}
 	fmt.Printf("found: %s %q\n", url, body)
@@ -57,7 +57,7 @@ func Crawl(url string, depth int, fetcher Fetcher) {
 	return
 }
 
-func main() {
+func _() {
 	fetcher := &HttpFetcher{}
 	Crawl("https://github.com/jellycoming", 4, fetcher)
 }

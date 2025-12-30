@@ -17,7 +17,7 @@ func pointer() {
 	fmt.Println(j) // 查看 j 的值（73）
 }
 
-func main() {
+func _() {
 	// 声明一个指向int类型值的指针p。
 	var p *int
 	// & 操作符是取地址符，&i 代表的是变量 i 的内存地址。

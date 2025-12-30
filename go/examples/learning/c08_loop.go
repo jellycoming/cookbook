@@ -46,7 +46,7 @@ func loop3() {
 	}
 }
 
-func main() {
+func _() {
 	loop1()
 	loop2()
 	loop3()

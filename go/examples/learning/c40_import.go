@@ -1,12 +1,13 @@
 package main
 
 import (
-	"cookbook-go/learning/constant"
-	"cookbook-go/learning/util"
+	"cookbook-go/examples/learning/constant"
+	"cookbook-go/examples/learning/util"
 	"fmt"
 )
 
-/**
+/*
+*
 1. init 函数用于程序执行前做包的初始化工作
 2. 同一个包内可以有多个 init 函数 (参考 constant 包)
 3. 包内的同一个源文件也可以有多个 init 函数 (参考 util 包)
@@ -17,7 +18,7 @@ func init() {
 	fmt.Println("init pkg main.")
 }
 
-func main() {
+func _() {
 	fmt.Println(util.Pi)
 	fmt.Println(constant.ON)
 }

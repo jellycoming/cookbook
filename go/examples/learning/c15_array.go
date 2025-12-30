@@ -23,6 +23,6 @@ func array() {
 	fmt.Println(primes)
 }
 
-func main() {
+func _() {
 	array()
 }

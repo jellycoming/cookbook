@@ -26,7 +26,8 @@ var (
 	cmp    complex128 = cmplx.Sqrt(-5 + 12i)
 )
 
-/**
+/*
+*
 没有明确初始值的变量声明会被赋予它们的零值。
 数值类型: 0
 布尔类型: false
@@ -65,7 +66,7 @@ func typeInference() {
 	fmt.Printf("ii is %T(%v)\n", ii, ii)
 }
 
-func main() {
+func _() {
 	// Printf在输出变量的时候对变量进行了格式化。%T: 值的类型的Go语法表示，%v: 值的默认格式，%q: 双引号围绕的字符串，由Go语法安全地转义。
 	const format string = "Type: %T Value: %v\n"
 	fmt.Printf(format, ToBe, ToBe)

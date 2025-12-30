@@ -15,7 +15,7 @@ func (T) Read(b []byte) (n int, err error)
 Read 用数据填充给定的字节切片并返回填充的字节数和错误值。在遇到数据流的结尾时，它会返回一个 io.EOF 错误。
 */
 
-func main() {
+func _() {
 	r := strings.NewReader("Hello, Reader!")
 	b := make([]byte, 8)
 	for {

@@ -11,7 +11,7 @@ func fibonacci() func() int {
 	}
 }
 
-func main() {
+func _() {
 	f := fibonacci()
 	for i := 0; i < 10; i++ {
 		fmt.Printf("%d, ", f())

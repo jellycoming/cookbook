@@ -25,7 +25,7 @@ func needFloat(x float64) float64 {
 	return x * 1.1
 }
 
-func main() {
+func _() {
 	const World = "世界"
 	fmt.Printf("Hello %v(%T)\n", World, World)
 	fmt.Printf("Happy %v(%T) Day\n", Pi, Pi)

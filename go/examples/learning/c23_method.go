@@ -47,14 +47,14 @@ func (f MyFloat) Abs() float64 {
 
 // 函数调用时参数的指针类型和值类型必须严格匹配
 // 方法调用时调用者的类型会根据方法参数的类型被 Go 语言重新解释
-func main() {
+func _() {
 	v := Vertexf{3, 4}
 	fmt.Println(v.Abs()) // 5
 	p := &v
 	fmt.Println(p.Abs()) // 以值为接收者的方法被调用时，接收者既能为值又能为指针。Go 会将方法调用 p.Abs() 解释为 (*p).Abs()。
 	fmt.Println(Abs(v))
 
-	v.Scale(10) // 以指针为接收者的方法被调用时，接收者既能为值又能为指针。Go 会将语句 v.Scale(10) 解释为 (&v).Scale(10)
+	v.Scale(10)          // 以指针为接收者的方法被调用时，接收者既能为值又能为指针。Go 会将语句 v.Scale(10) 解释为 (&v).Scale(10)
 	fmt.Println(v.Abs()) // 输出变为50。由于是指针接收者，这里改变了v的属性，如果变成值接收者，这里不会改变
 
 	Scale(&v, 10) // 带指针参数的函数调用时必须接受一个指针

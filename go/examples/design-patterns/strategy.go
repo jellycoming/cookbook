@@ -51,7 +51,7 @@ func (vc *VectorizationContext) Vectorize(in string) (map[string]*TensorProto, e
 }
 
 // 使用策略模式
-func main() {
+func RunStrategy() {
 	vc := NewVectorizationContext("DeepNN")
 	fmt.Println(vc.Vectorize("raw request"))
 

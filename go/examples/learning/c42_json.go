@@ -14,7 +14,7 @@ func toJsonString(v interface{}) string {
 	return string(data)
 }
 
-func main() {
+func _() {
 	s1 := []uint64{1, 2, 3, 4}
 	fmt.Println(toJsonString(s1))
 	s2 := map[string]string{"hello": "world", "foo": "bar"}

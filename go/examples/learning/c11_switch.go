@@ -53,7 +53,7 @@ func switch3() {
 	}
 }
 
-func main() {
+func _() {
 	switch1()
 	switch2()
 	switch3()

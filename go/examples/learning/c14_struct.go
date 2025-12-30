@@ -17,7 +17,7 @@ var (
 	pp = &Vertex{X: 1, Y: 2}                   // 创建一个 *Vertex 类型的结构体（指针）
 )
 
-func main() {
+func _() {
 	// 初始化结构体
 	v := Vertex{X: 1, Y: 2}
 	fmt.Println(v) // {1 2}

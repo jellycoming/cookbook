@@ -28,7 +28,7 @@ func run() error {
 	return &MyError{time.Now(), "it didn't work"}
 }
 
-func main() {
+func _() {
 	if err := run(); err != nil {
 		fmt.Println(err)
 	}

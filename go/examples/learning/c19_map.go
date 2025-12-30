@@ -67,7 +67,8 @@ func map1() {
 	}
 }
 
-/**
+/*
+*
 可以在 make map 时指定map的大小，这样在 map 中存储的数据小于该值时，map不会进行频繁的扩容，达到优化性能的目的
 */
 func map2() {
@@ -92,7 +93,7 @@ func fillMap(m map[string]string) {
 	m["ja"] = "java"
 }
 
-func main() {
+func _() {
 	map1()
 	map2()
 	testMutable()

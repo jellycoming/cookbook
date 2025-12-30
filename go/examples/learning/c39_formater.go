@@ -16,7 +16,7 @@ var campaign = Campaign{
 	Serving: true,
 }
 
-func main() {
+func _() {
 	// 通用占位符
 	// %v 值的默认格式
 	fmt.Printf("%v\n", campaign)         // {1001 campaign for my game 50.5 true}

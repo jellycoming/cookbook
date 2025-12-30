@@ -61,7 +61,7 @@ func (h *Hello) hello() {
 	fmt.Println("hello world", h.Timestamp)
 }
 
-func main() {
+func _() {
 	fmt.Println(say())
 	sayx()
 	fmt.Println(says())

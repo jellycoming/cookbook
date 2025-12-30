@@ -13,7 +13,7 @@ func str2() {
 	fmt.Println(len(s))
 }
 
-func main() {
+func _() {
 	str1()
 	str2()
 }
